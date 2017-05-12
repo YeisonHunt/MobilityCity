@@ -9,8 +9,3 @@ else{
 }
 ?>
 
-<?php 
-
-echo "vamos a cambiar como es la vaina aqui";
-
-?>
