@@ -8,3 +8,9 @@ else{
     header("location:index.html");
 }
 ?>
+
+<?php 
+
+echo "vamos a cambiar como es la vaina aqui";
+
+?>
