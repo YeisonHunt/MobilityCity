@@ -29,9 +29,6 @@ if($f2=mysqli_fetch_assoc($sql2)){
             $_SESSION['nomUsuario']=$f2['nomUsuario'];
             $_SESSION['password_admin']=$f2['password_admin'];
             $_SESSION['password'] = NULL;
-
-
-
             echo '<script>alert("Bienvenido Administrador")</script> ';
             echo "<script>location.href='indexAdmin.php'</script>";
 
@@ -41,8 +38,6 @@ if($f2=mysqli_fetch_assoc($sql2)){
         echo "<script>location.href='index.html'</script>";
     }
 }
-
-
 
 $sql=mysqli_query($conn,"SELECT * FROM usuario WHERE nomUsuario='$username'");
 if($f=mysqli_fetch_assoc($sql)){

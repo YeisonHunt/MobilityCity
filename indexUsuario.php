@@ -282,7 +282,7 @@ if (@!$_SESSION['nombre']) {
 
 <!-- Theme JavaScript -->
 <script src="js/grayscale.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHOZFL6ZqfT9wcpPuq9lEvqBJFUw7XWrA&callback=initMap" ></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJgBJvp7zUKGegJ4LOa-rtSOi9NOSmXw&callback=initMap" ></script>
 <script src="js/mapaInfoClima.js"></script>
 
 </body>

@@ -1,5 +1,4 @@
 
-
 //https://developers.google.com/maps/documentation/javascript/examples/maptype-image-overlay
 //https://developers.google.com/maps/documentation/javascript/examples/maptype-image-overlay
 //https://developers.google.com/maps/documentation/javascript/examples/overlay-simple
@@ -38,14 +37,16 @@ var overlay_Humedad_c;
 var overlay_Humedad_s;
 USGSOverlay.prototype = new google.maps.OverlayView();
 
-function initMap() {
+
+function initMap_clima() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
         center: {lat: 2.463525, lng: -76.585393},
         mapTypeId: 'roadmap'
     });
 
-    //Kml
+
+//Kml
     var ctaLayer = new google.maps.KmlLayer({
         url: 'https://raw.githubusercontent.com/AndresGJ144/mobilitycity/master/Rutacompleta.kml',
         map: map
@@ -60,7 +61,7 @@ function initMap() {
     var bounds_Lluvia_n = new google.maps.LatLngBounds(
         new google.maps.LatLng(2.47656,  -76.579996),
         new google.maps.LatLng(2.479625, -76.577615));
-    // The photograph is courtesy of the U.S. Geological Survey.
+// The photograph is courtesy of the U.S. Geological Survey.
     var srcImage_Temp_n = 'img/temperatura/'+estadoTemperatura+'.jpeg'; //Lo puedo cambiar a una url de internet..github
     var srcImage_Lluvia_n = 'img/'+string1+'.png';
     var srcImage_Humedad_n = 'img/humedad/'+estadoHumedad+'.png';
@@ -74,7 +75,7 @@ function initMap() {
     var bounds_Lluvia_c = new google.maps.LatLngBounds(
         new google.maps.LatLng(2.460245,  -76.593858),
         new google.maps.LatLng(2.463118, -76.591583));
-    // The photograph is courtesy of the U.S. Geological Survey.
+// The photograph is courtesy of the U.S. Geological Survey.
     var srcImage_Temp_c = 'img/temperatura/'+estadoTemperatura_zc+'.jpeg'; //Lo puedo cambiar a una url de internet..github
     var srcImage_Lluvia_c = 'img/'+string1_zc+'.png';
     var srcImage_Humedad_c = 'img/humedad/'+estadoHumedad_zc+'.png';
@@ -93,8 +94,8 @@ function initMap() {
     var srcImage_Humedad_s = 'img/humedad/'+estadoHumedad_zs+'.png';
 
 
-    // The custom USGSOverlay object contains the USGS image,
-    // the bounds of the image, and a reference to the map.
+// The custom USGSOverlay object contains the USGS image,
+// the bounds of the image, and a reference to the map.
     overlay_Humedad_n = new USGSOverlay(bounds_Humedad_n, srcImage_Humedad_n, map);
     overlay_Humedad_c = new USGSOverlay(bounds_Humedad_c, srcImage_Humedad_c, map);
     overlay_Humedad_s = new USGSOverlay(bounds_Humedad_s, srcImage_Humedad_s, map);
@@ -113,19 +114,19 @@ function initMap() {
 /** @constructor */
 function USGSOverlay(bounds, image, map) {
 
-    // Initialize all properties.
+// Initialize all properties.
     this.bounds_ = bounds;
     this.image_ = image;
     this.map_ = map;
 
 
-    // Define una propiedad que contenga la div de la imagen. Bien
-    // crea realmente este div después de recibir el onAdd ()
-    // método así que lo dejaremos null por ahora.
+// Define una propiedad que contenga la div de la imagen. Bien
+// crea realmente este div después de recibir el onAdd ()
+// método así que lo dejaremos null por ahora.
     this.div_ = null;
 
-    // Explicitly call setMap on this overlay.
-    // Llama explícitamente a setMap en esta superposición.
+// Explicitly call setMap on this overlay.
+// Llama explícitamente a setMap en esta superposición.
     this.setMap(map);
 }
 
@@ -140,7 +141,7 @@ USGSOverlay.prototype.onAdd = function() {
     div.style.borderWidth = '0px';
     div.style.position = 'absolute';
 
-    // Create the img element and attach it to the div.
+// Create the img element and attach it to the div.
     var img = document.createElement('img');
     img.src = this.image_;
     img.style.width = '100%';
@@ -150,25 +151,25 @@ USGSOverlay.prototype.onAdd = function() {
 
     this.div_ = div;
 
-    // Add the element to the "overlayLayer" pane.
+// Add the element to the "overlayLayer" pane.
     var panes = this.getPanes();
     panes.overlayLayer.appendChild(div);
 };
 
 USGSOverlay.prototype.draw = function() {
 
-    // We use the south-west and north-east
-    // coordinates of the overlay to peg it to the correct position and size.
-    // To do this, we need to retrieve the projection from the overlay.
+// We use the south-west and north-east
+// coordinates of the overlay to peg it to the correct position and size.
+// To do this, we need to retrieve the projection from the overlay.
     var overlayProjection = this.getProjection();
 
-    // Retrieve the south-west and north-east coordinates of this overlay
-    // in LatLngs and convert them to pixel coordinates.
-    // We'll use these coordinates to resize the div.
+// Retrieve the south-west and north-east coordinates of this overlay
+// in LatLngs and convert them to pixel coordinates.
+// We'll use these coordinates to resize the div.
     var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
     var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
 
-    // Resize the image's div to fit the indicated dimensions.
+// Resize the image's div to fit the indicated dimensions.
     var div = this.div_;
     div.style.left = sw.x + 'px';
     div.style.top = ne.y + 'px';
@@ -183,4 +184,4 @@ USGSOverlay.prototype.onRemove = function() {
     this.div_ = null;
 };
 
-google.maps.event.addDomListener(window, 'load', initMap);
+google.maps.event.addDomListener(window, 'load', initMap_clima);

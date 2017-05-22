@@ -40,6 +40,15 @@ if (@!$_SESSION['nombre']) {
 
     <link rel="import" href="verRutasMapa.html">
     <link rel="import" href="verZonas.php">
+    <link rel="import" href="mapas.php">
+
+    <!-- agregado esto le quita el fondo negro a las paginas -->
+    <!-- agregado esto le quita el fondo negro a las paginas -->
+    <!-- agregado esto le quita el fondo negro a las paginas -->
+    <!-- agregado esto le quita el fondo negro a las paginas -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -480,7 +489,7 @@ if (@!$_SESSION['nombre']) {
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading">Popayán</h1>
                     <p class="intro-text">Bienvenido a Mobility City.</p>
-                    <a href="#about" class="btn btn-circle page-scroll">
+                    <a href="#contact" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
                 </div>
@@ -489,15 +498,8 @@ if (@!$_SESSION['nombre']) {
     </div>
 </header>
 
-<!-- About Section -->
-<section id="about" class="container content-section text-center">
 
-</section>
 
-<!-- Download Section -->
-<section href="reporteUsuario.php" id="download" class="content-section text-center">
-
-</section>
 
 <!-- Pico Y Placa Section-->
 <section id="contact" class="container content-section text-center">
@@ -611,15 +613,25 @@ if (@!$_SESSION['nombre']) {
 </section>
 
 <!-- Map Section -->
-<div  id="mapaClima" class="container content-section text-center">
-
+<section id="mapaClima" class="container content-section text-center">
     <h2>Condiciones Ambientales</h2>
-    <div id="map"></div>
-    <script>
-        thatDoc.body.appendChild(thatDoc.importNode(content, true));
-    </script>
+    <div class="container">
+        <div id="map"></div>
+    </div>
+    <br><br>
+    <div class="container">
+        <script>
+            thatDoc.body.appendChild(thatDoc.importNode(content, true));
+        </script>
+    </div>
+    <br><br>
+    <div  class="container">
+        <?php
+        include("mapas.php");
+        ?>
+    </div>
 
-</div>
+</section>
 
 <!-- Footer -->
 <footer>
@@ -636,14 +648,14 @@ if (@!$_SESSION['nombre']) {
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+<!--
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjJgBJvp7zUKGegJ4LOa-rtSOi9NOSmXw&callback=initMap_clima" ></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&oe=ISO-8859-1;&amp;key=AIzaSyBp8tOsgWyAmX1ZnO-CPhpnqwuaZgx0uzc" type="text/javascript"></script>
 -->
 
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp8tOsgWyAmX1ZnO-CPhpnqwuaZgx0uzc&callback=initMap_trazarRuta"></script>
 <!-- Theme JavaScript -->
 <script src="js/grayscale.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHOZFL6ZqfT9wcpPuq9lEvqBJFUw7XWrA&callback=initMap" ></script>
 <script src="js/mapaInfoClima.js"></script>
 
 </body>
