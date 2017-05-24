@@ -45,10 +45,13 @@ if (@!$_SESSION['nombre']) {
     <!-- agregado esto le quita el fondo negro a las paginas -->
     <!-- agregado esto le quita el fondo negro a las paginas -->
     <!-- agregado esto le quita el fondo negro a las paginas -->
-    <!-- agregado esto le quita el fondo negro a las paginas -->
+    <!-- agregado esto le quita el fondo negro a las paginas
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    -->
+
+
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -95,7 +98,7 @@ if (@!$_SESSION['nombre']) {
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="#contact">Pico y Placa</a>
+                    <a class="page-scroll" href="#pico&placa">Pico y Placa</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#mapaClima">Condiciones Ambientales</a>
@@ -489,7 +492,7 @@ if (@!$_SESSION['nombre']) {
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading">Popayán</h1>
                     <p class="intro-text">Bienvenido a Mobility City.</p>
-                    <a href="#contact" class="btn btn-circle page-scroll">
+                    <a href="#pico&placa" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
                 </div>
@@ -499,12 +502,14 @@ if (@!$_SESSION['nombre']) {
 </header>
 
 
-
+<?php
+include("noticias.php");
+?>
 
 <!-- Pico Y Placa Section-->
-<section id="contact" class="container content-section text-center">
+<section id="pico&placa" class="container content-section text-center">
     <h2>PICO Y PLACA</h2>
-    <div class="container">
+    <div class="container" style="width: 80%;">
         <form class="well form-horizontal" action="picoPlaca.php" method="post"  id="contact_form">
 
             <!-- Form Name -->
@@ -609,6 +614,7 @@ if (@!$_SESSION['nombre']) {
 
         </form>
     </div>
+    <hr style="border-color: #000000;">
 
 </section>
 
