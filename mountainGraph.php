@@ -101,8 +101,8 @@ while($res=mysql_fetch_array($sql)){
 		</script>
 	</head>
 	<body>
-<script src="js/highcharts.js"></script>
-<script src="js/modules/exporting.js"></script>
+<script src="Highcharts-4.1.5/js/highcharts.js"></script>
+<script src="Highcharts-4.1.5/js/modules/exporting.js"></script>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 

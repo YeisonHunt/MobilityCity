@@ -9,13 +9,13 @@ require ("conexion.php");
 /********* Capturar datos enviados desde el arduino**********/
 
 $ardTemperatura  =  intval($_GET['cliTemperatura']);
-$ardHumedad  = intval($_GET['cliHumedad']);
+/*$ardHumedad  = intval($_GET['cliHumedad']);
 $ardLluvia  = intval($_GET['cliLluvia']);
 $ardZona = strval($_GET['cliZona']);
 $ardCarr9HNorte  = intval($_GET['traCarr9HNorte']);
 $ardCarr9HSur  = intval($_GET['traCarr9HSur']);
 $ardCarr6HNorte  = intval($_GET['traCarr6HNorte']);
-$ardCarr6HSur  = intval($_GET['traCarr6HSur']);
+$ardCarr6HSur  = intval($_GET['traCarr6HSur']);*/
 
 
 //echo  intval($_GET['cliTemperatura']). intval($_GET['cliTemperatura']). intval($_GET['cliTemperatura']). intval($_GET['cliTemperatura']);
@@ -27,7 +27,7 @@ $ardCarr6HSur  = intval($_GET['traCarr6HSur']);
 
 
 /* Tabla clima */
-$sqlClima = "INSERT INTO clima (cliHumedad, cliLluvia, cliTemperatura, cliZona, cliFecha, cliHora) VALUES ('$ardHumedad', '$ardLluvia', '$ardTemperatura', '$ardZona', CURDATE(),CURTIME() )";
+$sqlClima = "INSERT INTO clima (cliHumedad, cliLluvia, cliTemperatura, cliZona, cliFecha, cliHora) VALUES (66, 66, $ardTemperatura, '66', CURDATE(),CURTIME() )";
 
 if ($conn->query($sqlClima) === TRUE) {
     echo "Daños añadidos exitosamente a tabla clima.";

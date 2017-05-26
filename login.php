@@ -3,7 +3,7 @@ session_start();
 require("conexion.php");
 
 $username=$_POST['inputEmail'];
-$pass=$_POST['inputPassword'];
+$pass=md5($_POST['inputPassword']);
 $estadoLogin = "activo";
 
 //la variable  $conn viene de connect_db que lo traigo con el require("connect_db.php");
