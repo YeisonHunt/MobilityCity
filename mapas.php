@@ -59,11 +59,12 @@
     <div>
         <b>Start:</b>
         <select id="start">
-            <option value="bello horizonte, Popayan">bello horizonte, Popayan</option>
+            <option value="Cra. 9 #54a Norte-182, Popayán, Cauca, Colombia">Norte</option>
             <option value="Timbio">Timbio</option>
 
         </select>
         <br>
+        <!--
         <b>Waypoints:</b> <br>
         <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
         <select multiple id="waypoints">
@@ -71,6 +72,8 @@
             <option value="estadio ciro lopez, popayan">estadio ciro lopez, popayan</option>
         </select>
         <br>
+        -->
+
         <b>Tipo de Viaje</b> 
         <select id="travelMode" class="routeOptions" >
             <option value="DRIVING" selected="selected">En Auto</option>
@@ -79,7 +82,7 @@
                   	</select><br/>
         <b>End:</b>
         <select id="end">
-            <option value="Timbio">Timbio</option>
+            <option value="Cra. 9 #54a Norte-182, Popayán, Cauca, Colombia">Norte</option>
             <option value="bello horizonte, Popayan">bello horizonte, Popayan</option>
         </select>
         <br>
@@ -109,6 +112,11 @@
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var waypts = [];
+        waypts.push({
+            location: "cementerio central, popayan",
+            stopover: false
+        });
+        /*
         var checkboxArray = document.getElementById('waypoints');
         for (var i = 0; i < checkboxArray.length; i++) {
             if (checkboxArray.options[i].selected) {
@@ -118,6 +126,7 @@
                 });
             }
         }
+        */
 
         directionsService.route({
             origin: document.getElementById('start').value,
