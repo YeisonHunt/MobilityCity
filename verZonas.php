@@ -50,7 +50,6 @@
             $string1_zs ="rainy";
         }
         ?>
-    // SOMEWHERE IN THE SAME FILE: numberOfImages.php:
     <script type="text/javascript"> var string1 = "<?php echo $string1; ?>";   </script>
     <script type="text/javascript"> var string1_zc = "<?php echo $string1_zc; ?>";   </script>
     <script type="text/javascript"> var string1_zs = "<?php echo $string1_zs; ?>";   </script>
@@ -74,7 +73,6 @@
         $estadoTemperatura_zc = $rowTemp_zc[0];
         $estadoTemperatura_zs = $rowTemp_zs[0];
         ?>
-    // SOMEWHERE IN THE SAME FILE: numberOfImages.php:
     <script type="text/javascript"> var estadoTemperatura = "<?php echo $estadoTemperatura; ?>";   </script>
     <script type="text/javascript"> var estadoTemperatura_zc = "<?php echo $estadoTemperatura_zc; ?>";   </script>
     <script type="text/javascript"> var estadoTemperatura_zs = "<?php echo $estadoTemperatura_zs; ?>";   </script>
@@ -98,32 +96,10 @@
         $estadoHumedad_zc = $rowHum_zc[0];
         $estadoHumedad_zs = $rowHum_zs[0];
         ?>
-    // SOMEWHERE IN THE SAME FILE: numberOfImages.php:
     <script type="text/javascript"> var estadoHumedad = "<?php echo $estadoHumedad; ?>";   </script>
     <script type="text/javascript"> var estadoHumedad_zc = "<?php echo $estadoHumedad_zc; ?>";   </script>
     <script type="text/javascript"> var estadoHumedad_zs = "<?php echo $estadoHumedad_zs; ?>";   </script>
-        <?php
 
-        /* Método para llamar a trafico*/
-        $sql3 = "SELECT * from trafico  order by traNum DESC";
-        $result3 = $conn ->query($sql3);
-        $rowTraf = $result3->fetch_array(MYSQLI_NUM); // Devuelve la ID de la fila como número, con MYSQLI_ASSOC la devuelve con el nombre
-        $estadoTrafico_Carr9HNorte = $rowTraf[3];
-        $estadoTrafico_Carr9HSur = $rowTraf[4];
-        $estadoTrafico_Carr6HNorte = $rowTraf[5];
-        $estadoTrafico_Carr6HSur = $rowTraf[6];
-
-
-        /*
-        if ($estadoTrafico=="Trafico Bajo") {
-            $traficoImg="low";
-        }elseif($estadoTrafico=="Trafico Medio"){
-            $traficoImg="medium";
-        }else{
-            $traficoImg="high";
-        }
-        */
-        ?>
 
 </div>
 

@@ -279,7 +279,7 @@ int conectar_wifi()
   delay(1000);
   // comando para conexion con la red WIFI
   // Tener en cuanta ajustar nombre red ssid y password
-  String comandoCON = "AT+CWJAP=\"Estudiantes\",\"braroxjhoadr12\"";
+  String comandoCON = "AT+CWJAP=\"Andresselatraga\",\"trollface94\"";
   Serial2.println(comandoCON);
   //Serial.println(comandoCON);
   delay(10000);
@@ -317,7 +317,7 @@ void enviar_datos(int valTemp, int humedad, int lluvia, String zona, int fluCarr
 {
 
   String comandoI = "AT+CIPSTART=\"TCP\",\"";
-  comandoI += "192.168.0.108"; // Dirección del servidor de datos, en este caso la IP de nuestra PC.
+  comandoI += "192.168.43.227"; // Dirección del servidor de datos, en este caso la IP de nuestra PC.
   comandoI += "\",80";  //puerto
   Serial2.println(comandoI);
   delay(2000);
@@ -374,7 +374,7 @@ String leer_estado_leds()
   char dato = 0;
   String respuesta;
   String comando = "AT+CIPSTART=\"TCP\",\"";
-  comando += "192.168.0.108"; 
+  comando += "192.168.43.227"; 
   comando += "\",80";  //puerto
   
   Serial2.println(comando);
